@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Compass</string>
+    <string name="compass">compass</string>
+    <string name="title_activity_detail">DetailActivity</string>
+</resources>

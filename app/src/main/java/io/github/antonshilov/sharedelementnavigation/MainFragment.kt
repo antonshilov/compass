@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.ActivityNavigator
+import androidx.navigation.ActivityNavigatorExtras
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -26,11 +26,11 @@ class MainFragment : Fragment() {
     private fun navigateToActivity() {
         val options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity!!,
                 UtilPair.create(image, image.transitionName))
-        val extras = ActivityNavigator.Extras(options)
         findNavController().navigate(R.id.detailActivity,
                 null, // Bundle of args
                 null, // NavOptions
-                extras)
+                ActivityNavigatorExtras(options)
+        )
     }
 
     private fun navigateToDetail() {
